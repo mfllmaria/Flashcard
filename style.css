@@ -32,3 +32,97 @@ main {
   justify-items: center;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #a8edea, #fed6e3);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  padding: 2rem;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #5a189a;
+  margin-bottom: 2rem;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  justify-items: center;
+}
+
+.cartao {
+  width: 250px;
+  height: 180px;
+  perspective: 1000px;
+}
+
+.cartao__conteudo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cartao.virado .cartao__conteudo {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.frente h3 {
+  color: #5a189a;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.verso {
+  transform: rotateY(180deg);
+  background-color: #fceaff;
+  color: #5a189a;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #fff;
+  text-align: center;
+  padding: 1rem;
+  color: #555;
+  font-size: 0.95rem;
+  border-top: 2px solid #ccc;
+}
+
+footer strong {
+  color: #d63384;
+  font-weight: bold;
+}
